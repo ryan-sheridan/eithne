@@ -5,6 +5,10 @@ build.sh
 # Build directory
 build/
 
+# allow only these inside of build
+!/build/linker.ld
+!/build/Makefile
+
 # clangd index cache
 .cache/
 
