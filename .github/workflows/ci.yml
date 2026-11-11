@@ -1,0 +1,25 @@
+# GPT generated with prompt
+# user (me): how can i add ci that runs on any feature/* branch that will prevent merges with main unless it passes, the ci must build the project using the makefile
+name: CI
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build project
+        run: make -C build
+
