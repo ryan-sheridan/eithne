@@ -2,10 +2,8 @@
 
 build.sh
 
-# Build directory
-build/
-
-# allow only these inside of build
+/build/*
+!/build/
 !/build/linker.ld
 !/build/Makefile
 
