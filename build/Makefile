@@ -1,4 +1,8 @@
-CC = /opt/homebrew/bin/arm-none-eabi-gcc
+ifeq ($(shell uname -s),Darwin)
+    CC = /opt/homebrew/bin/arm-none-eabi-gcc
+else
+    CC = arm-none-eabi-gcc
+endif
 
 # Set any constants based on the raspberry pi model.  Version 1 has some differences to 2 and 3
 ifeq ($(RASPI_MODEL),1)
