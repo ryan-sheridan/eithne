@@ -20,6 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: install arm gnu toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -u gnu-arm-none-eabi
+
       - name: Build project
         run: make -C build
 
